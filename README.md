@@ -1,245 +1,276 @@
-````markdown
-# BlinkIT Sales Analysis | Power BI Dashboard
+<div align="center">
 
-> An interactive Business Intelligence dashboard built with Microsoft Power BI to analyze BlinkIT sales, product performance, and outlet performance.
+# 📊 BlinkIT Sales Analysis | Power BI Dashboard
 
----
+**Interactive Business Intelligence Dashboard for Sales, Product & Outlet Performance Analysis**
 
-## Overview
+[![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge\&logo=powerbi\&logoColor=black)](https://powerbi.microsoft.com/)
+[![Power Query](https://img.shields.io/badge/Power%20Query-1177BB?style=for-the-badge\&logo=microsoft\&logoColor=white)](https://learn.microsoft.com/power-query/)
+[![DAX](https://img.shields.io/badge/DAX-Data%20Analysis%20Expressions-0078D4?style=for-the-badge\&logo=microsoft\&logoColor=white)](https://learn.microsoft.com/dax/)
 
-This project focuses on transforming BlinkIT grocery sales data into an interactive and business-focused Power BI dashboard.
+*Transforming retail sales data into interactive, business-focused insights.*
 
-The analysis combines data modeling, table relationships, DAX measures, KPIs, interactive filters, and visual analytics to provide a clear view of sales performance across products, outlets, locations, and outlet characteristics.
-
-The main goal of this project is to understand how Power BI can transform raw business data into meaningful insights and support data-driven decision-making.
-
----
-
-## Business Objective
-
-The primary objective of this project is to analyze BlinkIT's sales data and understand:
-
-- Which product categories contribute the most to sales
-- Which outlet types perform better
-- How sales are distributed across outlet locations
-- How Low Fat and Regular products contribute to sales
-- How outlet size affects sales
-- How sales vary across outlet establishment years
-- How actual sales compare with the target
+</div>
 
 ---
 
-## Project Workflow
+## 📖 Project Overview
 
-```text
-Raw Data
-    ↓
-Data Preparation
-    ↓
-Data Modeling
-    ↓
-Table Relationships
-    ↓
-DAX Measures & KPIs
-    ↓
-Interactive Visualizations
-    ↓
-Dashboard Development
-    ↓
-Business Insights
-````
+The **BlinkIT Sales Analysis Dashboard** is an interactive Business Intelligence project developed using **Microsoft Power BI** to analyze retail sales performance across products, outlets, locations, and outlet characteristics.
+
+The project follows an end-to-end analytics workflow covering **data preparation, data modeling, table relationships, DAX measures, KPI development, interactive filtering, and dashboard visualization**.
+
+The final dashboard provides a consolidated view of sales performance and enables users to explore product and outlet-level trends through interactive report pages.
 
 ---
 
-## Dataset
+## 🎯 Business Objective
 
-The project uses multiple related tables to organize the BlinkIT grocery sales data.
+The primary objective of this project is to analyze BlinkIT sales data and generate meaningful insights into overall sales performance, product contribution, and outlet performance.
 
-### Tables Used
+### Key Questions
 
-* BlinkIT Grocery Data
-* Items
-* Items Content
-* Outlet Info
-* Outlet Location
-* Cities
+* How do actual sales compare with the defined sales target?
+* Which product categories contribute the most to total sales?
+* How are sales distributed between Low Fat and Regular products?
+* How does outlet type relate to sales performance?
+* How does outlet size affect sales distribution?
+* How do sales vary across outlet location types?
+* How does sales performance vary across outlet establishment years?
 
-The main sales table contains information such as:
+---
 
-* Item Fat Content
-* Item Identifier
+## 📂 Dataset
+
+The project uses multiple related tables containing product, outlet, location, and sales information.
+
+### Data Tables Used
+
+| Table                      | Purpose                    |
+| -------------------------- | -------------------------- |
+| `BlinkIT Grocery Data (2)` | Main sales fact table      |
+| `Items`                    | Item-related information   |
+| `Items Content`            | Product content attributes |
+| `Outlet Info`              | Outlet-related information |
+| `Outlet Location`          | Outlet location details    |
+| `Cities`                   | City-level information     |
+
+### Data Points Included
+
+**Product Attributes**
+
 * Item Type
-* Item Visibility
+* Item Fat Content
 * Item Weight
+* Item Visibility
+* Item Identifier
+
+**Outlet Attributes**
+
 * Outlet Establishment Year
-* Outlet Identifier
-* Outlet Location Type
 * Outlet Size
+* Outlet Location Type
 * Outlet Type
+* Outlet Identifier
+
+**Performance Metrics**
+
 * Sales
 * Rating
 
-The supporting tables provide additional information related to items, outlets, locations, and cities.
+---
+
+## 🧩 Data Model
+
+The project uses a relational data model created in **Power BI Model View**.
+
+The central sales table is connected with supporting dimension tables through identifier keys, allowing the report to perform cross-table analysis and dynamic filtering.
+
+### Model Components
+
+* `BlinkIT Grocery Data (2)` — Central sales fact table
+* `Items` — Product-related attributes
+* `Items Content` — Additional product information
+* `Outlet Info` — Outlet attributes
+* `Outlet Location` — Location-related attributes
+* `Cities` — City-level information
+
+### Relationship Keys
+
+The model uses keys including:
+
+* `OutletKey`
+* `OutletLocationKey`
+* `ItemKey`
+* `ItemContentKey`
+* `CitiesKey`
+
+This model provides the foundation for DAX calculations, KPIs, slicers, and report visualizations.
 
 ---
 
-## Data Model
+## 🔄 Project Workflow
 
-The project uses a relational data model created in Power BI.
-
-Multiple tables are connected through relationships so that information from different tables can work together correctly across the report.
-
-The data model was created before developing the report pages to ensure that filters, calculations, KPIs, and visualizations work consistently throughout the dashboard.
-
----
-
-## Power BI Workflow
-
-The project was developed using the following workflow:
-
-1. Loaded the available datasets into Power BI
-2. Prepared and organized the data
-3. Created relationships between the tables
-4. Built DAX measures and KPIs
-5. Created interactive slicers
-6. Designed business-focused visualizations
-7. Developed three report pages
-8. Analyzed product and outlet performance
-9. Derived key business insights
-10. Presented the final dashboard
+```text
+Data Preparation
+        ↓
+Data Modeling
+        ↓
+Table Relationships
+        ↓
+DAX Measures
+        ↓
+KPI Development
+        ↓
+Interactive Filters
+        ↓
+Data Visualization
+        ↓
+Dashboard Development
+        ↓
+Business Insights
+```
 
 ---
 
-# Dashboard Pages
+# 📊 Dashboard Pages
 
-The Power BI report contains three interactive analysis pages.
+The Power BI report consists of three specialized analysis pages:
+
+1. Executive Dashboard
+2. Product Performance Analysis
+3. Outlet Performance Analysis
 
 ---
 
 ## 01 | Executive Dashboard
 
-The main dashboard provides an overall view of BlinkIT's sales performance.
+The **Executive Dashboard** provides a high-level view of overall sales performance and allows users to explore the data through interactive filters.
 
 ### Key Performance Indicators
 
-| KPI                      |   Value |
-| ------------------------ | ------: |
-| Total Sales              |   1.20M |
-| Average Sales per Outlet | 120.17K |
-| Average Rating           |    3.92 |
-| Target Sales             |   1.32M |
-| Sales per Kg             |   13.24 |
+| KPI                          |       Value |
+| ---------------------------- | ----------: |
+| **Total Sales**              |   **1.20M** |
+| **Average Sales per Outlet** | **120.17K** |
+| **Average Rating**           |    **3.92** |
+| **Target Sales**             |   **1.32M** |
+| **Sales per Kg**             |   **13.24** |
 
 ### Visualizations
 
-* Sales vs Target
-* Total Sales by Outlet Establishment Year
-* Total Sales by Item Fat Content
-* Total Sales by Item Type
-* Target Sales by Outlet Location Type
-* Sales by Outlet Type
+* **Sales vs Target** — Tracks actual sales against the defined target.
+* **Total Sales by Outlet Establishment Year** — Shows sales variation across establishment years.
+* **Total Sales by Item Fat Content** — Compares sales contribution from Low Fat and Regular products.
+* **Total Sales by Item Type** — Compares sales across product categories.
+* **Target Sales by Outlet Location Type** — Compares target-related values across location tiers.
+* **Sales by Outlet Type** — Compares sales across different outlet formats.
 
 ### Interactive Filters
-
-The dashboard includes slicers for:
 
 * Outlet Location Type
 * Outlet Type
 * Item Type
 * Item Fat Content
 
-These filters allow users to dynamically explore the dashboard from different business perspectives.
+### Key Insights
+
+* Total sales are approximately **1.20M**, compared with a target of approximately **1.32M**.
+* Low Fat products contribute a larger share of sales than Regular products.
+* Sales performance varies across outlet types, locations, and establishment years.
+* The dashboard provides a consolidated view of overall sales performance.
 
 ---
 
 ## 02 | Product Performance Analysis
 
-This page focuses on product-level sales performance.
+The **Product Performance Analysis** page focuses on sales contribution across different product categories and item characteristics.
 
 ### Key Performance Indicators
 
-| KPI                    |        Value |
-| ---------------------- | -----------: |
-| Total Sales            | 12,01,681.49 |
-| Product Categories     |           16 |
-| Low Fat Sales %        |       64.60% |
-| Average Product Rating |         3.92 |
+| KPI                        |            Value |
+| -------------------------- | ---------------: |
+| **Total Sales**            | **1,201,681.49** |
+| **Product Categories**     |           **16** |
+| **Low Fat Sales %**        |       **64.60%** |
+| **Average Product Rating** |         **3.92** |
 
 ### Visualizations
 
-* Total Sales by Item Type
-* Total Sales and Average Sales per Outlet by Outlet Type
-* Sales Performance Score
-* Total Sales by Item Fat Content
-* Total Sales by Item Type and Item Fat Content
+* **Total Sales by Item Type** — Compares sales across all product categories.
+* **Total Sales and Average Sales per Outlet by Outlet Type** — Compares sales performance across outlet formats.
+* **Sales Performance Score** — Provides a visual summary of the performance metric.
+* **Total Sales by Item Fat Content** — Compares Low Fat and Regular product sales.
+* **Total Sales by Item Type and Item Fat Content** — Provides a category-level comparison of fat-content sales.
 
-### Key Findings
+### Key Insights
 
-* Fruits and Vegetables and Snack Foods are among the highest-selling categories.
-* Low Fat products contribute a larger share of total sales than Regular products.
+* **Fruits and Vegetables** and **Snack Foods** are among the highest-performing product categories.
+* Low Fat products contribute approximately **64.60%** of total sales.
 * Product-level comparisons help identify categories with stronger sales contribution.
+* The combination of Item Type and Fat Content provides a deeper view of product-level sales distribution.
 
 ---
 
 ## 03 | Outlet Performance Analysis
 
-This page focuses on outlet-level performance based on outlet type, location, size, and establishment year.
+The **Outlet Performance Analysis** page focuses on sales performance across outlet type, location, size, and establishment year.
 
 ### Key Performance Indicators
 
-| KPI                    |   Value |
-| ---------------------- | ------: |
-| Total Outlet Sales     | 120.17K |
-| Total Outlets          |      16 |
-| Average Sales per Item |  140.99 |
-| Sales Achieved         |   90.91 |
+| KPI                        |       Value |
+| -------------------------- | ----------: |
+| **Total Outlet Sales**     | **120.17K** |
+| **Total Outlets**          |      **16** |
+| **Average Sales per Item** |  **140.99** |
+| **Sales Achieved**         |   **90.91** |
 
 ### Visualizations
 
-* Total Sales by Item Type
-* Total Sales by Outlet Type
-* Total Sales by Outlet Location Type
-* Total Sales by Outlet Establishment Year
-* Total Sales by Outlet Size
+* **Total Sales by Item Type** — Shows product-category sales contribution.
+* **Total Sales by Outlet Type** — Compares sales across outlet formats.
+* **Total Sales by Outlet Location Type** — Compares sales across Tier 1, Tier 2, and Tier 3 locations.
+* **Total Sales by Outlet Establishment Year** — Shows sales variation across establishment years.
+* **Total Sales by Outlet Size** — Compares sales contribution across Small, Medium, and High outlet sizes.
 
-### Key Findings
+### Key Insights
 
-* Supermarket Type1 has the highest sales contribution among the outlet types shown.
-* Small and Medium outlets have very similar sales contributions.
-* High-size outlets contribute a comparatively lower share of sales.
-* Sales performance varies across different outlet establishment years.
+* **Supermarket Type 1** is the highest-contributing outlet type in terms of sales.
+* Sales contributions vary across Small, Medium, and High outlet sizes.
+* Small and Medium outlets account for substantial portions of the sales distribution.
+* Sales performance varies across outlet location types and establishment years.
 
 ---
 
-# Key Business Insights
+# 💡 Key Business Insights
 
 ### Product Performance
 
-Fruits and Vegetables and Snack Foods are among the strongest-performing product categories.
+**Fruits and Vegetables** and **Snack Foods** are among the strongest-performing product categories in the analysis.
 
-### Fat Content
+### Product Fat Content
 
-Low Fat products contribute a larger share of total sales compared with Regular products.
+**Low Fat products account for approximately 64.60% of total sales**, representing a larger sales contribution than Regular products.
 
-### Outlet Performance
+### Outlet Type
 
-Supermarket Type1 contributes the highest sales among the outlet types shown in the dashboard.
+**Supermarket Type 1** contributes the highest sales among the outlet types represented in the dashboard.
 
 ### Outlet Size
 
-Small and Medium outlets contribute similar shares of total sales, while High-size outlets contribute a lower share.
+Sales are distributed across Small, Medium, and High outlet sizes, with Small and Medium outlets contributing substantial portions of total sales.
 
 ### Outlet Location
 
-Sales vary across Tier 1, Tier 2, and Tier 3 outlet locations, allowing location-wise performance comparison.
+The dashboard enables comparison of sales performance across **Tier 1, Tier 2, and Tier 3** outlet locations.
 
 ### Sales Target
 
-The Sales vs Target visual provides a quick comparison between current sales performance and the target.
+The Executive Dashboard provides a direct comparison between actual sales and the defined target, making overall performance easier to monitor.
 
 ---
 
-# Dashboard Preview
+# 🖼️ Dashboard Preview
 
 ### Executive Dashboard
 
@@ -255,52 +286,45 @@ The Sales vs Target visual provides a quick comparison between current sales per
 
 ---
 
-# Project Demo
+# 🎥 Project Demo
 
-A short walkthrough video of this project is available on my LinkedIn profile.
+A complete video walkthrough of the Power BI project is available on LinkedIn.
 
-The video covers:
+The walkthrough covers:
 
-* Data Model
+* Power BI Data Model
 * Table View
 * Executive Dashboard
-* Interactive Filters
 * KPI Cards
+* Interactive Filters
 * Product Performance Analysis
 * Outlet Performance Analysis
 * Key Business Insights
 * Final Conclusion
 
-**LinkedIn Demo:**
-[View Project Walkthrough](YOUR_LINKEDIN_POST_LINK_HERE)
+**[View Project Walkthrough on LinkedIn](https://www.linkedin.com/posts/saisourav-panigrahi_powerbi-dataanalytics-datascience-ugcPost-7493642185578520576-FutZ/)**
 
 ---
 
-# Tools & Technologies
+# 🛠️ Tools & Technologies
 
-| Category            | Tools                                  |
-| ------------------- | -------------------------------------- |
-| BI Platform         | Microsoft Power BI                     |
-| Data Transformation | Power Query                            |
-| Calculations        | DAX                                    |
-| Data Modeling       | Power BI Relationships                 |
-| Visualization       | Power BI                               |
-| Analysis            | Business Intelligence & Data Analytics |
+| Category                | Technology                             |
+| ----------------------- | -------------------------------------- |
+| **BI Platform**         | Microsoft Power BI                     |
+| **Data Transformation** | Power Query                            |
+| **Calculations**        | DAX                                    |
+| **Data Modeling**       | Power BI                               |
+| **Visualization**       | Power BI                               |
+| **Analysis**            | Business Intelligence & Data Analytics |
 
 ---
 
-# Repository Structure
+# 📁 Repository Structure
 
 ```text
 blinkit-sales-analysis-powerbi/
 │
 ├── datasets/
-│   ├── BlinkIT Grocery Data
-│   ├── Items
-│   ├── Items Content
-│   ├── Outlet Info
-│   ├── Outlet Location
-│   └── Cities
 │
 ├── screenshots/
 │   ├── dashboard.png
@@ -314,34 +338,37 @@ blinkit-sales-analysis-powerbi/
 
 ---
 
-# Conclusion
-
-This project demonstrates how Power BI can transform raw business data into an interactive dashboard for sales, product, and outlet analysis.
-
-The dashboard brings multiple business perspectives together and makes it easier to compare performance, identify patterns, and support data-driven business decisions.
-
----
-
-# Author
-
-**Sai Sourav Panigrahi**
-
-Data Science | Data Analytics | Machine Learning | AI
-
----
-
-## Learning Outcomes
+# 🎯 Learning Outcomes
 
 Through this project, I gained practical experience in:
 
-* Building Power BI data models
-* Creating table relationships
-* Working with DAX measures
-* Designing KPI cards
-* Creating interactive slicers
-* Building business-focused dashboards
-* Analyzing sales and outlet performance
-* Presenting data-driven business insights
+* Power BI data modeling
+* Table relationships
+* Power Query
+* DAX measures
+* KPI development
+* Interactive slicers
+* Dashboard design
+* Data visualization
+* Product performance analysis
+* Outlet performance analysis
+* Business-oriented data analysis
+* Insight generation
 
-```
-```
+---
+
+# 📌 Conclusion
+
+This project demonstrates an end-to-end Power BI workflow for transforming retail sales data into an interactive Business Intelligence dashboard.
+
+By combining **data modeling, relationships, DAX measures, KPI development, interactive filters, and data visualization**, the dashboard provides a structured view of sales, product performance, and outlet performance.
+
+The project highlights how business data can be transformed into clear and interactive insights that support data-driven analysis and decision-making.
+
+---
+
+# 👤 Author
+
+**Sai Sourav Panigrahi**
+
+*Data Science | Data Analytics | Machine Learning | AI*
