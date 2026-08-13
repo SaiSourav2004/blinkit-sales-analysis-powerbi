@@ -274,18 +274,18 @@ The Executive Dashboard provides a direct comparison between actual sales and th
 
 ### Executive Dashboard
 
-![Executive Dashboard](<img width="1364" height="777" alt="image" src="https://github.com/user-attachments/assets/5d0dd28e-9d1a-4786-9b29-e0eeb6b69b03" />
-)
+<img width="1364" height="777" alt="image" src="https://github.com/user-attachments/assets/5d0dd28e-9d1a-4786-9b29-e0eeb6b69b03" />
+
 
 ### Product Performance Analysis
 
-![Product Performance Analysis](<img width="1433" height="772" alt="image" src="https://github.com/user-attachments/assets/9f8a183e-98df-41c2-bcf8-9b66659eb65c" />
-)
+<img width="1433" height="772" alt="image" src="https://github.com/user-attachments/assets/9f8a183e-98df-41c2-bcf8-9b66659eb65c" />
+
 
 ### Outlet Performance Analysis
 
-![Outlet Performance Analysis](<img width="1435" height="801" alt="image" src="https://github.com/user-attachments/assets/f3644272-564d-4dff-8c09-4a79fd19d0cf" />
-)
+<img width="1435" height="801" alt="image" src="https://github.com/user-attachments/assets/f3644272-564d-4dff-8c09-4a79fd19d0cf" />
+
 
 ---
 
